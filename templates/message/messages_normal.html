@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages</title>
+        <style>
+        #messages {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#messages td, #messages th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#messages tr:nth-child(even){background-color: #f2f2f2;}
+
+#messages tr:hover {background-color: #ddd;}
+
+#messages th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #47BBF5;
+  color: black;
+}
+    </style>
+</head>
+<body>
+<form action="/" method="get">
+    <input type="submit" value="Home" />
+</form>
+<table id="messages">
+    <TR>
+        <TH>ID</TH>
+        <TH>Text</TH>
+        <TH>Counter</TH>
+    </TR>
+    {% for message in messages %}
+    <TR>
+        <TD class="ID">{{message.id}}</TD>
+        <TD class="Text">{{message.text}}</TD>
+        <TD class="Counter">{{message.counter}}</TD>
+    </TR>
+    {% endfor %}
+</table>
+</body>
+</html>

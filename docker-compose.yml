@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:alpine
+    restart: always
+    networks:
+      cd_bingo:
+        ipv4_address: 10.5.0.5
+    environment:
+      - POSTGRES_DB=cd_api_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - "TZ=Europe/Prague"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - "TZ=Europe/Prague"
+    networks:
+      cd_bingo:
+        ipv4_address: 10.5.0.6
+    depends_on:
+      - db
+
+networks:
+  cd_bingo:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16

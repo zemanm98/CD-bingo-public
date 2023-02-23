@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+.button {
+  background-color: #ccffff;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.selected_button {
+  background-color: #660066;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<form action="/logout" method="get">
+    <input type="submit" value="Logout" />
+</form>
+<h1>ČD bingo</h1>
+<table>
+    <tr>
+        <th>
+            {% if selected_tiles[0] == 1 %}
+                <form action="/bingo/{{0}}" method="post">
+                    <input type="submit" class="button" value="{{messages[0]}}">
+                </form>
+            {% else %}
+                <form action="/bingo/{{0}}" method="post">
+                    <input type="submit" class="selected_button" value="{{messages[0]}}">
+                </form>
+            {% endif %}
+        </th>
+        <th>
+            {% if selected_tiles[1] == 1 %}
+                <form action="/bingo/{{1}}" method="post">
+                    <input type="submit" class="button" value="{{messages[1]}}">
+                </form>
+            {% else %}
+                <form action="/bingo/{{1}}" method="post">
+                    <input type="submit" class="selected_button" value="{{messages[1]}}">
+                </form>
+            {% endif %}
+        </th>
+        <th>
+            {% if selected_tiles[2] == 1 %}
+                <form action="/bingo/{{2}}" method="post">
+                    <input type="submit" class="button" value="{{messages[2]}}">
+                </form>
+            {% else %}
+                <form action="/bingo/{{2}}" method="post">
+                    <input type="submit" class="selected_button" value="{{messages[2]}}">
+                </form>
+            {% endif %}
+        </th>
+    </tr>
+    <tr>
+        <th>
+            {% if selected_tiles[3] == 1 %}
+                <form action="/bingo/{{3}}" method="post">
+                    <input type="submit" class="button" value="{{messages[3]}}">
+                </form>
+            {% else %}
+                <form action="/bingo/{{3}}" method="post">
+                    <input type="submit" class="selected_button" value="{{messages[3]}}">
+                </form>
+            {% endif %}
+        </th>
+        <th>
+            {% if selected_tiles[4] == 1 %}
+                <form action="/bingo/{{4}}" method="post">
+                    <input type="submit" class="button" value="{{messages[4]}}">
+                </form>
+            {% else %}
+                <form action="/bingo/{{4}}" method="post">
+                    <input type="submit" class="selected_button" value="{{messages[4]}}">
+                </form>
+            {% endif %}
+        </th>
+        <th>
+            {% if selected_tiles[5] == 1 %}
+                <form action="/bingo/{{5}}" method="post">
+                    <input type="submit" class="button" value="{{messages[5]}}">
+                </form>
+            {% else %}
+                <form action="/bingo/{{5}}" method="post">
+                    <input type="submit" class="selected_button" value="{{messages[5]}}">
+                </form>
+            {% endif %}
+        </th>
+    </tr>
+    <tr>
+        <th>
+            {% if selected_tiles[6] == 1 %}
+                <form action="/bingo/{{6}}" method="post">
+                    <input type="submit" class="button" value="{{messages[6]}}">
+                </form>
+            {% else %}
+                <form action="/bingo/{{6}}" method="post">
+                    <input type="submit" class="selected_button" value="{{messages[6]}}">
+                </form>
+            {% endif %}
+        </th>
+        <th>
+            {% if selected_tiles[7] == 1 %}
+                <form action="/bingo/{{7}}" method="post">
+                    <input type="submit" class="button" value="{{messages[7]}}">
+                </form>
+            {% else %}
+                <form action="/bingo/{{7}}" method="post">
+                    <input type="submit" class="selected_button" value="{{messages[7]}}">
+                </form>
+            {% endif %}
+        </th>
+        <th>
+            {% if selected_tiles[8] == 1 %}
+                <form action="/bingo/{{8}}" method="post">
+                    <input type="submit" class="button" value="{{messages[8]}}">
+                </form>
+            {% else %}
+                <form action="/bingo/{{8}}" method="post">
+                    <input type="submit" class="selected_button" value="{{messages[8]}}">
+                </form>
+            {% endif %}
+        </th>
+    </tr>
+</table>
+</body>
+</html>
